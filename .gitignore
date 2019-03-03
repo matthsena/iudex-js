@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# Firebase
+.firebase
+.firebaserc
+firebase.json
+404.html
