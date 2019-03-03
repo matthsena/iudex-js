@@ -19,11 +19,18 @@ document.addEventListener('readystatechange', () => {
     if (document.readyState === "complete") {
 
         date = new IudexDate();
-        console.log(date.getDate())
         browser = new IudexBrowser();
-        console.log(browser.getBrowser());
         device = new IudexDevice();
-        console.log(device.getDevice());
+
+        let obj = Object.assign({}, date.getDate(), browser.getBrowser(), device.getDevice());
+         console.log(obj)
+        let infos = document.getElementById("infos");
+       
+        Object.keys(obj).forEach(value => {
+
+            infos.innerHTML += `<p>${value}: ${obj[value]}</p>`;
+            console.log(value + ":" + obj[value])
+        })
     }
 });
 
